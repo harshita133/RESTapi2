@@ -35,10 +35,10 @@ class PostAdapter(var postList:ArrayList<Post>) : RecyclerView.Adapter<PostAdapt
         val tvBody = itemView.findViewById<TextView>(R.id.tvBody)
 
         fun bind( post:Post){
-            tvUserId.text=post.userId.toString()
-            tvId.text=post.id.toString()
-            tvTitle.text=post.title.toString()
-            tvBody.text=post.body.toString()
+            tvUserId.text="user id : ${post.userId}"
+            tvId.text="id : ${post.id}"
+            tvTitle.text="title : ${post.title}"
+            tvBody.text="body : ${post.body}"
         }
     }
 }
