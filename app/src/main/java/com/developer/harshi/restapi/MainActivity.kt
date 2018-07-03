@@ -27,5 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         })
 
+        downloadTask.execute("http://jsonplaceholder.typicode.com/posts")
+
     }
 }

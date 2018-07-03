@@ -26,7 +26,7 @@ class DownloadTask : AsyncTask<String,Unit ,ArrayList<Post>>(){
         val bufferReader = BufferedReader(InputStreamReader(connection.getInputStream()))
 
         val sb = StringBuilder()
-        var buffer = ""
+        var buffer:String? = ""
         while(buffer!=null){
             sb.append(buffer)
             buffer = bufferReader.readLine()
@@ -34,7 +34,7 @@ class DownloadTask : AsyncTask<String,Unit ,ArrayList<Post>>(){
 
         val jsonArray = JSONArray(sb.toString())
 
-        for( i in 0..jsonArray.length()){
+        for( i in 0 until jsonArray.length()){
             val postObject = jsonArray.getJSONObject(i)
             val post = Post(
                     postObject.getInt("userId"),
